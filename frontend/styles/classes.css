@@ -1,0 +1,153 @@
+body {
+    background-color: #303E68;
+    min-width: 950px;
+}
+
+header,
+.action-area > div {
+    border: 3px ridge white;
+}
+
+header {
+    background-color: #F6B062;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    grid-area: header;
+
+}
+
+h2 {
+    font-family: 'Fira Sans', sans-serif;
+    /*color:  TODO: хочу градиент*/
+}
+
+header > h2 {
+    padding: 0 30px 0 30px;
+    text-align: center;
+    width: 33%;
+}
+
+.wrapper {
+    display: grid;
+    width: 90%;
+    height: calc(100vh - 30px);
+    margin: auto auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    grid-template:
+        [row1-start] "header header header" 1fr [row1-end]
+        [row2-starrt] "main main main" 10fr [row2-end]
+        / 1fr;
+    gap: 10px 15px;
+}
+
+.action-area {
+    background-color: #303E68;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px 10px;
+}
+
+.action-area__left-subarea__output {
+    grid-area: graphic;
+    background: white;
+    grid-column: 1 / 6;
+    grid-row: 1 / 4
+}
+
+.action-area__left-subarea__input {
+    background: #95a7d0;
+    grid-area: input;
+    grid-column: 1 / 6;
+    grid-row: 4 / 6;
+    height: fit-content;
+    padding: 25px;
+}
+
+.action-area__left-subarea__input > form {
+    display: grid;
+    gap: 30px 15px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: column;
+    place-items: center;
+
+}
+
+.action-area__left-subarea__input__xInput,
+.action-area__left-subarea__input__yInput,
+.action-area__left-subarea__input__rInput,
+.action-area__left-subarea__input__send {
+    place-self: start;
+}
+
+.action-area__left-subarea__input__xInput__field,
+.action-area__left-subarea__input__yInput__field,
+.action-area__left-subarea__input__rInput__field,
+.action-area__left-subarea__input__send__button {
+    justify-self:end;
+}
+
+/*.action-area__left-subarea__input > form > label {*/
+/*    grid-area: aaaa;*/
+/*    grid-columns: 1 / 4;*/
+/*}*/
+
+.action-area__right-subarea__history-table {
+    background: #95a7d0;
+    grid-area: results;
+    width: 100%;
+    height: 700px;
+    overflow: hidden auto;
+    grid-column: 6 / 9;
+    grid-row: 1 / 6;
+}
+
+/*.action-area__right-subarea__history-table > div {*/
+/*    width: 100%;*/
+/*    border: 1px solid white;*/
+/*    margin: 1px 0px 1px 0px;*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*}*/
+
+.action-area__right-subarea__history-table > table {
+    width: 100%;
+    overflow: scroll;
+    box-sizing: content-box;
+}
+
+.action-area__right-subarea__history-table > table > tbody {
+    overflow-y: auto;
+}
+
+.action-area__right-subarea__history-table > table > tbody > tr > td,
+.action-area__right-subarea__history-table > table > thead > tr > th {
+    text-align: center;
+    padding: 5px 10px;
+    word-break: keep-all;
+    background: #6784DD;
+} /*TODO ну и кал*/
+
+
+/*form > label {*/
+/*    display: block;*/
+/*    margin: 8px auto 8px auto;*/
+/*}*/
+
+/*@media (max-width:1265px) {*/
+/*    .action-area {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        width: 100%;*/
+/*    }*/
+/*    .action-area__right-subarea {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
+
